@@ -10,6 +10,8 @@ var Banjoe = {
     y_min : -1825,
     speed : -10,
     y_fall : 1,
+    numJumps: 0,
+    maxJumps : 3,
     gifs : ["images/BanjoGuyRunning.gif", "images/BanjoGuyRunningLeft.gif", "images/BanjoGuyJump.gif", "images/BanjoGuyJumpLeft.gif"],
     $images : null,
  
@@ -41,8 +43,9 @@ var Banjoe = {
     },
 
     jump : function(){
-        if(this.y_position > this.y_max){
-            this.y_position += this.y_velocity;      
+        if(this.numJumps < this.maxJumps){
+            this.y_position += this.y_velocity;
+            this.numJumps += 1;      
         }
         if(this.direction === true){
             this.jumpRight();
@@ -53,12 +56,12 @@ var Banjoe = {
     },
 
     run : function(){
-        if(this.y_position < this.y_min + 1 /*&& this.y_position != -1*/){
+        if(this.y_position < this.y_min + 1 ){
             this.y_position += this.y_fall;
-            this.x_position += this.speed;
         }
         else if (this.y_position === this.y_min +1) {
             this.y_position = this.y_min;
+            this.numJumps = 0;
             if(this.direction === true){
                 this.goRight();
             }
@@ -66,6 +69,7 @@ var Banjoe = {
                 this.goLeft();
             }
         }
+        this.x_position += this.speed;
     }
 }
 
