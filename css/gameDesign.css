@@ -1,0 +1,53 @@
+.topnav{
+    z-index:99;
+}
+body{background-color:black;}
+.containerGame{
+    overflow:hidden;
+    position:relative;
+    top: 200px;
+}
+#ground{
+    background: url("../images/Ground.png") repeat-x;
+    height:550px;
+    width:9000px;
+    position:relative;
+    z-index:4;
+}
+#mountains{
+    background: url("../images/Mountains.png") repeat-x;
+    height:550px;
+    width:9000px;
+    position:relative;
+    top:-550px;
+    z-index:3;
+}
+#sky{
+    background: url("../images/Sky.png") repeat-x;
+    height:550px;
+    width:9000px;
+    position:relative;
+    z-index:1;
+    top:-1100px;
+}
+#moon{
+    background: url("../images/Moon.png") repeat-x;
+    height:550px;
+    width:9000px;
+    position:relative;
+    z-index:2;
+    top:-1650px;
+}
+/*#Banjoe{
+    background: url("../images/BanjoGuy.gif") repeat-x;
+    position:relative;
+    left:500px;
+    z-index:97;
+}*/
+#Banjoe{
+    /*background: url("../images/BanjoGuy.gif") repeat-x;*/
+    position:relative;
+    z-index:5;
+    top:-1825px;
+    left:400px;
+}
